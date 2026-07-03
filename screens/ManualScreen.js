@@ -26,7 +26,8 @@ export default function ManualScreen({ navigation }) {
       {/* Forward */}
       <Pressable
         style={styles.arrow}
-        onPress={() => sendCommand("FORWARD")}
+        onPressIn={() => sendCommand("FORWARD")}
+        onPressOut={() => sendCommand("STOP")}
       >
         <Text style={styles.arrowText}>↑</Text>
       </Pressable>
@@ -36,21 +37,24 @@ export default function ManualScreen({ navigation }) {
 
         <Pressable
           style={styles.arrow}
-          onPress={() => sendCommand("LEFT")}
+          onPressIn={() => sendCommand("LEFT")}
+          onPressOut={() => sendCommand("STOP")}
         >
           <Text style={styles.arrowText}>←</Text>
         </Pressable>
 
         <Pressable
           style={styles.stop}
-          onPress={() => sendCommand("STOP")}
+          onPressIn={() => sendCommand("STOP")}
+          onPressOut={() => sendCommand("STOP")}
         >
           <Text style={styles.stopText}>STOP</Text>
         </Pressable>
 
         <Pressable
           style={styles.arrow}
-          onPress={() => sendCommand("RIGHT")}
+          onPressIn={() => sendCommand("RIGHT")}
+          onPressOut={() => sendCommand("STOP")}
         >
           <Text style={styles.arrowText}>→</Text>
         </Pressable>
@@ -60,7 +64,8 @@ export default function ManualScreen({ navigation }) {
       {/* Backward */}
       <Pressable
         style={styles.arrow}
-        onPress={() => sendCommand("BACKWARD")}
+        onPressIn={() => sendCommand("BACKWARD")}
+        onPressOut={() => sendCommand("STOP")}
       >
         <Text style={styles.arrowText}>↓</Text>
       </Pressable>
